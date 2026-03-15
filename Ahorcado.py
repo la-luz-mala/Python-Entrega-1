@@ -38,6 +38,14 @@ while attempts > 0:
 
     letter = input("Ingresá una letra: ")
 
+    #Paso la letra a lowercase para que usar en mayúscula no me coma intentos
+    letter = letter.lower()
+    
+    # Verificar si el caracter ingresado es válido
+    if (letter.isalpha() == False): # Método .isalpha(): chequea si está en el alfabeto
+        print("Caracter inválido, por favor ingrese una letra.")
+        continue
+
     if letter in guessed:
         print("Ya usaste esa letra.")
     elif letter in word:

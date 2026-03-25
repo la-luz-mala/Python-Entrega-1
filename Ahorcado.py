@@ -1,22 +1,26 @@
 import random
+# Diccionario con categorías
+words_dict = {
+    "lenguajes": ("python",),
+    "tipos": ("entero", "cadena", "lista"),
+    "elementos": ("programa", "variable", "bucle", "funcion")
+}
 
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
-
-word = random.choice(words)
 guessed = []
 attempts = 6
 
 print("¡Bienvenido al Ahorcado!")
+# Mostrar las categorías
+print("Categorías:")
+for key in words_dict:
+    print(key)
 print()
+
+# Variable con los values de la categoría elegida
+chosen_category = words_dict[input("Elegí una categoría: ")]
+
+# Random dentro de la categoría elegida
+word = random.choice(chosen_category)
 
 points = 0
 
